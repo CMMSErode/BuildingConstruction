@@ -1,0 +1,10 @@
+
+CREATE TABLE Designation
+(
+ID INT NOT NULL,
+Code nVARCHAR(10) NOT NULL,
+Name nVARCHAR(60) NOT NULL,
+Creator INT NULL,
+Created DATETIME NULL,
+IsActive BIT NULL
+)
