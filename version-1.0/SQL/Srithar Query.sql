@@ -31,8 +31,6 @@ insert into CompanyType values(2,'Customer','Customers',1,null,GETDATE(),1)
 update CompanyType set Creator=0
 update Company set Creator=0
 
-select CT.Code,CT.Name from Company C
-join CompanyType CT on C.ID=CT.CompanyID
 
 
 
