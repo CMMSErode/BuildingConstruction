@@ -7,7 +7,7 @@ using DataLayer;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Windows.Forms;
+
 namespace UtilityLayer
 {
     public class Common
@@ -80,11 +80,12 @@ namespace UtilityLayer
             writer.Flush();
             writer.Close();
         }
-        public static bool CheckOpened(string name, FormCollection fc)
-        {
-            //FormCollection fc = Application.OpenForms;
 
-            foreach (Form frm in fc)
+        public static bool CheckOpened(string name)
+        {
+            System.Windows.Forms.FormCollection fc = System.Windows.Forms.Application.OpenForms;
+
+            foreach (System.Windows.Forms.Form frm in fc)
             {
                 if (frm.Name.ToLower() == name.ToLower())
                 {
@@ -93,5 +94,6 @@ namespace UtilityLayer
             }
             return false;
         }
+
     }
 }

@@ -41,5 +41,22 @@ namespace DataLayer
             }
             return con;
         }
+        public void BeginTransaction()
+        {
+            CreatConnection();
+            tran = con.BeginTransaction(IsolationLevel.ReadUncommitted);
+        }
+        public void CommitTransaction()
+        {
+            tran.Commit();
+            //trans.Dispose();
+            CloseConnection();
+        }
+        public void RollbackTransaction()
+        {
+            tran.Rollback();
+            //trans.Dispose();
+            CloseConnection();
+        }
     }
 }

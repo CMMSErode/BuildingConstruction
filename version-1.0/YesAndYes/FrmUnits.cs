@@ -52,13 +52,13 @@ namespace YesAndYes
         {
             if (txtCode.Text != "")
             {
-                DLUnit objDLUnit = new DLUnit();
+                DLUnit objDLMaterial = new DLUnit();
 
-                int ID = objDLUnit.FetchIDbyCode(txtCode.Text);
+                int ID = objDLMaterial.FetchIDbyCode(txtCode.Text);
 
                 if (ID > 0)
                 {
-                    if (objDLUnit.DeleteByID(ID) > 0)
+                    if (objDLMaterial.DeleteByID(ID) > 0)
                     {
                         MessageBox.Show("Record Deleted");
                         ClearControls();
@@ -186,15 +186,6 @@ namespace YesAndYes
                 }
             }
             gvUnit.Visible = false;
-        }
-
-        private void btnRights_Click(object sender, EventArgs e)
-        {
-            FrmRights frm = new FrmRights();
-            FrmUnits objfrmUnit = new FrmUnits();
-            frm.frmName = this.Name;
-            frm.frmRightsControl = objfrmUnit;
-            frm.Show();
         }
        
     }

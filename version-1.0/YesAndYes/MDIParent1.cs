@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using UtilityLayer;
 
 namespace YesAndYes
 {
@@ -20,26 +21,17 @@ namespace YesAndYes
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            //Form childForm = new Form();
-            //childForm.MdiParent = this;
-            //childForm.Text = "Window " + childFormNumber++;
-            //childForm.Show();
-
-
-        }
-        private bool CheckOpened(string name)
-        {
-            FormCollection fc = Application.OpenForms;
-
-            foreach (Form frm in fc)
+            bool Result = Common.CheckOpened("FrmCompanyType");
+            if (Result == false)
             {
-                if (frm.Name.ToLower() == name.ToLower())
-                {
-                    return true;
-                }
+                FrmCompanyType frm = new FrmCompanyType();
+                frm.strHeader = "FrmCompanyType";
+                frm.Show();
             }
-            return false;
+
         }
+
+       
 
        
         private void OpenFile(object sender, EventArgs e)
@@ -112,7 +104,7 @@ namespace YesAndYes
 
         private void MaterailToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             bool Result = CheckOpened("frmmaterials");
+            bool Result = Common.CheckOpened("frmmaterials");
              if (Result == false)
              {
                  FrmMaterials frm = new FrmMaterials();
@@ -123,7 +115,7 @@ namespace YesAndYes
 
         private void UnitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool Result = CheckOpened("frmunits");
+            bool Result = Common.CheckOpened("frmunits");
             FrmUnits frm = new FrmUnits();
             if (Result == false)
             {
@@ -142,18 +134,29 @@ namespace YesAndYes
                     }
                 }
             }
-        }
+        }        
 
-        private void DesignationToolStripMenuItem_Click(object sender, EventArgs e)
+        private void companyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool Result = UtilityLayer.Common.CheckOpened("frmdesignations", Application.OpenForms);
-            FrmDesignations frm = new FrmDesignations();
-
+            bool Result = Common.CheckOpened("FrmCompany");
             if (Result == false)
             {
-                frm.strHeader = "UNITS";
+                FrmCompany frm = new FrmCompany();
+                frm.strHeader = "Company";
                 frm.Show();
             }
-        }      
+        }
+
+        private void companyTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool Result = Common.CheckOpened("FrmCompanyType");
+            if (Result == false)
+            {
+                FrmCompanyType frm = new FrmCompanyType();
+                frm.strHeader = "Company Type";
+                frm.Show();
+            }
+        }
+
     }
 }

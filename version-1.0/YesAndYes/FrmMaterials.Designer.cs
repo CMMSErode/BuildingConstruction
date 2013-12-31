@@ -229,12 +229,10 @@
             // ErrCode
             // 
             this.ErrCode.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.ErrCode.ContainerControl = this;
             // 
             // ErrName
             // 
             this.ErrName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.ErrName.ContainerControl = this;
             // 
             // gvMaterial
             // 
