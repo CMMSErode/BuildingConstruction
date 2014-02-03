@@ -84,7 +84,7 @@ namespace YesAndYes
         #region Button Functions
         private void btnSave_Click(object sender, EventArgs e)
         {
-            ELCompanyType objEL = new ELCompanyType();
+            ELCompany objEL = new ELCompany();
             
             int newID = 0;
 
@@ -108,7 +108,7 @@ namespace YesAndYes
 
             if (Validations())
             {
-                if (DLCompanyType.Add(objEL) > 0)
+                if (DLCompany.Add(objEL) > 0)
                 {
                     MessageBox.Show("Record Inserted");
                     ClearControls();
@@ -124,7 +124,7 @@ namespace YesAndYes
         {
             gv.Visible = true;
            
-            gv.DataSource = DLCompanyType.FetchAll();
+            gv.DataSource = DLCompany.FetchAll();
 
             if (gv.Rows.Count > 0)
             {
@@ -160,9 +160,9 @@ namespace YesAndYes
                 string strCode = gv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                 string ID = gv.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-                ELCompanyType objEL = new ELCompanyType();
-                DLCompanyType objDL = new DLCompanyType();
-                objEL = DLCompanyType.FetchByID(Convert.ToInt32(ID));
+                ELCompany objEL = new ELCompany();
+                DLCompany objDL = new DLCompany();
+                objEL = DLCompany.FetchByID(Convert.ToInt32(ID));
 
 
                 if (objEL != null)

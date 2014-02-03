@@ -85,6 +85,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.transationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estimationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -99,7 +101,8 @@
             this.toolsMenu,
             this.windowsMenu,
             this.helpMenu,
-            this.baseToolStripMenuItem});
+            this.baseToolStripMenuItem,
+            this.transationToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
@@ -555,6 +558,21 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // transationToolStripMenuItem
+            // 
+            this.transationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.estimationToolStripMenuItem});
+            this.transationToolStripMenuItem.Name = "transationToolStripMenuItem";
+            this.transationToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.transationToolStripMenuItem.Text = "&Transation";
+            // 
+            // estimationToolStripMenuItem
+            // 
+            this.estimationToolStripMenuItem.Name = "estimationToolStripMenuItem";
+            this.estimationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.estimationToolStripMenuItem.Text = "&Estimation";
+            this.estimationToolStripMenuItem.Click += new System.EventHandler(this.estimationToolStripMenuItem_Click);
+            // 
             // MDIParent1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -636,6 +654,8 @@
         private System.Windows.Forms.ToolStripMenuItem baseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem companyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem companyTypeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estimationToolStripMenuItem;
     }
 }
 

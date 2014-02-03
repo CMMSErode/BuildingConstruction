@@ -82,13 +82,8 @@ namespace YesAndYes
             DataView dv = DLCompany.FetchAll();            
             if (dv != null)
             {
-                //Dictionary<int,string> DicObj=null;
                 for (int index = 0; index < dv.Count; index++)
                 {
-                    //DicObj = new Dictionary<int, string>();
-                    //DicObj = new Dictionary<int, string>();
-                    //DicObj.Add(Convert.ToInt16(dv[index].Row["ID"]),Convert.ToString(dv[index].Row["Name"]));
-                    //cbTypes.Items.Add(DicObj);
                     cbTypes.Items.Add(Convert.ToString(dv[index].Row["Name"]));
                 }
             }

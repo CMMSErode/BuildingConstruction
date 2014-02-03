@@ -158,5 +158,16 @@ namespace YesAndYes
             }
         }
 
+        private void estimationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool Result = Common.CheckOpened("FrmEstimation1");
+            if (Result == false)
+            {
+                FrmEstimation1 frm = new FrmEstimation1();
+                frm.strHeader = "Estimation";
+                frm.Show();
+            }
+        }
+
     }
 }
